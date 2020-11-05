@@ -138,7 +138,7 @@ class php (
   Boolean $manage_repos                           = $php::params::manage_repos,
   Boolean $fpm                                    = true,
   $fpm_service_enable                             = $php::params::fpm_service_enable,
-  $fpm_service_ensure                             = $php::params::fpm_service_ensure,
+  Optional[String] $fpm_service_ensure            = lookup('php::fpm_service_ensure', Optional[String], undef, $php::params::fpm_service_ensure),
   $fpm_service_name                               = $php::params::fpm_service_name,
   $fpm_service_provider                           = undef,
   Hash $fpm_pools                                 = $php::params::fpm_pools,
